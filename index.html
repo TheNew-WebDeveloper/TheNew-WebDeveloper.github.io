@@ -1,9 +1,157 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rizwan's Portfolio</title>
+    <link rel="shortcut icon" href="./assets/images/logo.jpg" type="image/x-icon">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>Mohammed Rizwan</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">Rizwan | Software Developer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="hero-title">Hi, I'm <span class="highlight-text">Rizwan</span></h1>
+        <p class="hero-subtitle">MERN Stack Developer | Passionate About Web Development</p>
+        <div class="hero-button">
+            <a href="#contact" class="contact-button btn-lg">Contact Me</a>
+        </div>
+        <div class="hero-button">
+            <a href="./assets/files/Rizwan - Basic Resume.pdf" class="contact-button btn-lg" target="_blank">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Side: Text Content -->
+            <div class="col-lg-6 text-center text-lg-start">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I am a passionate <b>MERN Stack Developer</b> specializing in building modern web applications.
+                    With expertise in <b>React.js, Node.js, Express.js, and MongoDB</b>, I create seamless user experiences 
+                    and robust backend systems.
+                </p>
+                <ul class="about-info">
+                    <li><strong>🎂 Birthday:</strong> 05 Jan 2000</li>
+                    <li><strong>📍 Location:</strong> Vijayawada, India</li>
+                    <li><strong>📧 Email:</strong> developer@gmail.com</li>
+                    <li><strong>💼 Freelance:</strong> Available</li>
+                </ul>
+                <a href="#contact" class="hire-button">Hire Me</a>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="col-lg-6 text-center">
+                <img src="./assets/images/my-id.jpg" alt="Developer Image" class="about-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+    <div class="container text-center">
+        <h2>Skills</h2>
+        <p class="skills-text">I specialize in full-stack development with the latest web technologies.</p>
+
+        <div class="row" id="skills-container">
+            <!-- Skills will be dynamically added from script.js -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="section">
+    <div class="container text-center">
+        <h2>My Work</h2>
+        <p class="portfolio-text">Here are some of my latest projects.</p>
+
+        <div class="row g-4" id="portfolio-container">
+            <!-- Portfolio projects will be loaded dynamically using JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container text-center">
+        <h2>Contact Me</h2>
+        <p class="contact-text">Feel free to reach out for collaborations or just a chat!</p>
+        
+        <div class="row">
+            <!-- Contact Info -->
+            <div class="col-lg-5 text-start">
+                <h4>Get in Touch</h4>
+                <p><strong>Email:</strong> developer@gmail.com</p>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p><strong>Location:</strong> Vijayawada, India</p>
+                <p><strong>Freelance:</strong> Available</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <form class="contact-form" target="_blank" id="userForm">
+                    <div class="mb-3">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="contact-button w-100" id="submitBtn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    &copy; 2024 Rizwan. All Rights Reserved.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+</body>
 </html>

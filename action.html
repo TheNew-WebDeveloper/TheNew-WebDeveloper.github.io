@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #4CAF50, #2E8B57);
+            color: white;
+            text-align: center;
+        }
+        #container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+            animation: fadeIn 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        #message-box {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2 id="heading"></h2>
+        <p id="paragraph">Thank you, <span id="name"></span>! Your message has been delivered.</p>
+        <div id="message-box">
+            <p><strong>Email : </strong><span id="email"></span></p>
+            <p><strong>Message : </strong><span id="message"></span></p>
+        </div>
+        <p id="footer">We will get back to you soon! 🚀</p>
+    </div>
+    <script>
+        const savedData = localStorage.getItem("userData");
+
+        if (!savedData) {
+            // If no data is found, show an error message and hide the message box
+            document.getElementById("heading").innerText = `❌ No message submitted!`;
+            document.getElementById("paragraph").innerText = `Please go back and fill out the form.`;
+            document.getElementById("message-box").style.display = "none";
+            document.getElementById("footer").style.display = "none";
+        } else {
+            const user = JSON.parse(savedData); // Convert back to object
+
+            // Ensure the expected properties exist before accessing them
+            const name = user.name || "";
+            const email = user.email || "";
+            const message = user.message || "";
+
+            if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+                document.getElementById("heading").innerText = `❌ No message submitted!`;
+                document.getElementById("paragraph").innerText = `Please go back and fill out the form.`;
+                document.getElementById("message-box").style.display = "none";
+                document.getElementById("footer").style.display = "none";
+                } else {
+                document.getElementById("heading").innerText = `🎉 Message Sent Successfully! 🎉`;
+                document.getElementById("message-box").style.display = "inline-block";
+                document.getElementById("footer").style.display = "inline-block";
+                document.getElementById("name").innerText = name;
+                document.getElementById("email").innerText = email;
+                document.getElementById("message").innerText = message;
+            }
+        }
+    </script>
+</body>
+</html>
