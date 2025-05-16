@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // <!-- Portfolio Section -->
     const projects = [
-        { title: "YouTube Clone", description: "A React-based YouTube UI clone.", img: "./assets/images/project1.jpg" },
-        { title: "E-commerce Site", description: "Full-stack e-commerce website.", img: "./assets/images/project2.jpg" },
-        { title: "Chat App", description: "Real-time chat application using MERN stack.", img: "./assets/images/project3.jpg" }
+        { title: "Counter App", description: "A React-based YouTube UI clone.", img: "./assets/images/project1.jpg", link: "./assets/projects/Counter App/Counter.html"},
+        { title: "Quizz App", description: "Full-stack e-commerce website.", img: "./assets/images/project2.jpg", link: "./assets/projects/Quizz App/Quizz.html" },
+        { title: "Tip Calculator", description: "Real-time chat application using MERN stack.", img: "./assets/images/project3.jpg", link: "./assets/projects/Tip Calculator/Tip Calculator.html" }
     ];
 
     // Load Portfolio Projects Dynamically
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="card-body">
                         <h5 class="card-title">${project.title}</h5>
                         <p class="card-text">${project.description}</p>
-                        <a href="https://github.com/TheNew-WebDeveloper" class="card-button" target="_blank">View Project</a>
+                        <a href="${project.link}" class="card-button" target="_blank">View Project</a>
                     </div>
                 </div>
             </div>

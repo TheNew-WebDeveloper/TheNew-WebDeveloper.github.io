@@ -1,0 +1,159 @@
+:root {
+    --bg-color: #1f1f1f;
+    --text-color: #f5f5f5;
+    --form-bg: #2e2e2e;
+    --input-bg: #3a3a3a;
+    --border-color: #666;
+    --accent-color: #007BFF;
+    --panel-bg: #444;
+    --success-color: #28a745;
+}
+
+.light-theme {
+    --bg-color: #f4f4f4;
+    --text-color: #1a1a1a;
+    --form-bg: #ffffff;
+    --input-bg: #f0f0f0;
+    --border-color: #ccc;
+    --accent-color: #007BFF;
+    --panel-bg: #eaeaea;
+    --success-color: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#tipForm {
+    background-color: var(--form-bg);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease;
+}
+
+#tipForm h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input {
+    height: 40px;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+button {
+    height: 45px;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#toggle-switch {
+    background-color: var(--success-color);
+}
+
+#toggle-switch:hover {
+    background-color: #1e7e34;
+}
+
+#panel {
+    display: none;
+    background-color: var(--panel-bg);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    animation: slideUp 0.5s ease forwards;
+}
+
+#panel p {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #tipForm {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+
+    button, input {
+        font-size: 0.9rem;
+    }
+}
